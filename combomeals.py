@@ -6,7 +6,7 @@ import mmap
 
 #open twitter
 consumer_key = "<your consumer key here>"
-consumer_secret = "<your consumer secret here"
+consumer_secret = "<your consumer secret here>"
 access_token = "<your access token here>"
 access_token_secret = "<your access token secret here>"
 
@@ -22,7 +22,7 @@ updated_xml = urllib2.urlopen(mlb_today + "/master_scoreboard.xml").read()
 # parse the downloaded XML
 game_list = ET.fromstring(updated_xml)
 
-with open("/home2/ryan.fox/ComPyMeals/combomeals.txt", "a+") as combomeals:
+with open("<your file of existing combo meals>", "a+") as combomeals:
     for game in game_list.findall('game'):
         for home_runs in game.findall('home_runs'):
             for players in home_runs.findall('player'):
